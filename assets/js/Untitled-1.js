@@ -1,5 +1,5 @@
 //   ejemplo ahorcado
-window.onload = function () {
+function ahorcado() {
 
   var alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h',
         'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's',
@@ -222,3 +222,5 @@ window.onload = function () {
     showClue.innerHTML = "Clue: - " +  hints [catagoryIndex][hintIndex];
   };
 };
+
+ahorcado();

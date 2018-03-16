@@ -1,3 +1,98 @@
+@charset "UTF-8";
+/* Theme Name: Brad Frost Web V8
+Author: Brad Frost
+*/
+/*------------------------------------*    #TABLE OF CONTENTS
+\*------------------------------------*/
+/**
+ * ABSTRACTS.................Variables and mixins
+ * BASE......................Base elements
+ * LAYOUT....................Layout Rules
+ * COMPONENTS................Components
+ * UTILITIES.................Global/Generic Classes
+ * VENDOR....................Styles out of my control
+ */
+/**
+ * Import Sass partials
+ *
+ * 1) The file structure is following the 7-1 structure found
+ * from Sass Guidelines: https://sass-guidelin.es/#the-7-1-pattern
+ */
+/*------------------------------------*    #ABSTRACTS
+\*------------------------------------*/
+/*------------------------------------*    #VARIABLES
+\*------------------------------------*/
+/**
+ * Colors
+ */
+/**
+ * Fonts
+ */
+/**
+ * Font Sizes
+ */
+/**
+ * Spacing
+ */
+/**
+ * Border thickness
+ */
+/**
+ * Breakpoints
+ */
+/**
+ * Animations
+ */
+/*------------------------------------*    #MIXINS
+\*------------------------------------*/
+/**
+ * Text Link Styles
+ */
+/*------------------------------------*    #BASE
+\*------------------------------------*/
+/*------------------------------------*    #RESET
+\*------------------------------------*/
+/**
+ * 1) Border-Box http:/paulirish.com/2012/box-sizing-border-box-ftw/
+ */
+* {
+  box-sizing: border-box;
+  border: 1px solid red !important;
+}
+
+/**
+ * Zero out margin and padding on these elements
+ */
+html, body, div, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, ol, ul, li, form, fieldset, legend, label, table, header, footer, nav, section, figure {
+  margin: 0;
+  padding: 0; }
+
+/**
+ * Remove list styles from ordered and unordered lists by default
+ */
+ol, ul {
+  list-style: none; }
+
+/**
+ * Collapse borders on table's base styles
+ */
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/**
+ * Display block these elements
+ */
+header, footer, nav, section, article, hgroup, figure {
+  display: block; }
+
+/*------------------------------------*    #BODY
+\*------------------------------------*/
+/**
+ * 1) Main body container base styles
+ */
+
+
 body {
   background: #c1d72e;
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
