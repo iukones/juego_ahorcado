@@ -94,7 +94,7 @@ header, footer, nav, section, article, hgroup, figure {
 
 
 body {
-  background: #c1d72e;
+  background: #ffc600;
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   color: #fff;
   height: 100%;
@@ -137,18 +137,18 @@ p {
   font-size: 1.6em;
 }
 
-#alphabet {
+#abecedario {
   margin: 15px auto;
   padding: 0;
   max-width: 900px;
 }
-#alphabet:after {
+#abecedario:after {
   content: "";
   display: table;
   clear: both;
 }
 
-#alphabet li {
+#abecedario li {
   float: left;
   margin: 0 10px 10px 0;
   list-style: none;
@@ -164,7 +164,7 @@ p {
   -khtml-border-radius: 5px;
   border: solid 1px #fff;
 }
-#alphabet li:hover {
+#abecedario li:hover {
   background: #c1d72e;
   border: solid 1px #fff;
   color: #fff;

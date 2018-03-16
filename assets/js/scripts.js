@@ -12,16 +12,16 @@
 // ejemplo activar y desactivar foco en botones
 
 document.addEventListener('keydown', function (e) {
-    console.log(e.keyCode);
+    console.log(e.key);
 });
 
-function ahorcado() {
+function ahorcado () {
 
     var palabra;
     var adivinaPalabra;
     var guardarAdivinaPalabra = [ ];
     var espaciosPalabra;
-    
+
     var abecedario = [
         'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h',
         'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p',
@@ -29,17 +29,19 @@ function ahorcado() {
         'y', 'z'
     ];
 
-    var teclado = function () {
-        teclas = document.getElementById('buttons');
-        letras = document.createElement('ul');
-
-        for (let i = 0; i < abecedario.length; i++) {
-            const letras = abecedario[i];
-            
+    // crear teclado con abecedario
+function teclado() {
+    var teclas = document.getElementById('buttons');
+    var letras = document.createElement('ul');
+    for (var i = 0; i < abecedario.length; i++) {
+        letras.id = 'abecedario';
+        var listaLetras = document.createElement('li');
+        listaLetras.id = 'letras';
+        listaLetras.innerHTML = abecedario[i];
+        teclas.appendChild(letras);
+        letras.appendChild(listaLetras);
         }
-        
     }
-
-
+    teclado();
 }
-
+ahorcado();
