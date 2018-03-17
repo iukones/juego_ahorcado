@@ -57,7 +57,7 @@ Author: Brad Frost
  */
 * {
   box-sizing: border-box;
-  border: 1px solid red !important;
+  /* border: 1px solid red !important; */
 }
 
 /**
@@ -149,7 +149,7 @@ p {
 }
 
 #abecedario li {
-  float: left;
+  /* float: left;
   margin: 0 10px 10px 0;
   list-style: none;
   width: 35px;
@@ -162,12 +162,31 @@ p {
   -webkit-border-radius: 5px;
   border-radius: 5px;
   -khtml-border-radius: 5px;
-  border: solid 1px #fff;
+  border: solid 1px #fff; */
+  float: left;
+  border: .4rem solid black;
+  border-radius: .5rem;
+  margin: .1rem;
+  /* margin: 0 10px 10px 0; */
+  font-size: 1.5rem;
+  padding: 1rem .5rem;
+  transition: all .07s ease;
+  width: 4rem;  
+  text-align: center;
+  color: white;
+  background: rgba(0,0,0,0.4);
+  text-shadow: 0 0 0.5rem black;
 }
-#abecedario li:hover {
+.push {
+  transform: scale(1.1);
+  border-color: #ffc600;
+  box-shadow: 0 0 1rem #ffc600;
+}
+
+/* #abecedario li:hover {
   background: #c1d72e;
   border: solid 1px #fff;
-  color: #fff;
+  color: #fff; */
 }
 
 #my-word {
