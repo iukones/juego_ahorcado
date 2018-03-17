@@ -12,7 +12,12 @@
 // ejemplo activar y desactivar foco en botones
 
 document.addEventListener('keydown', function (e) {
-    console.log(e.key);
+    // console.log(e.key);
+    var pressKey = document.querySelector('li[data-key = "' + e.key +'"]');
+    // console.log('li[data-key = "' + e.key +'"]');
+    // var pressKey = document.querySelector('li[data-key = "a"]');
+    // var pressKey = document.querySelector('li[data-key = " " a]');
+    pressKey.classList.add('push');
 });
 
 function ahorcado () {
@@ -33,6 +38,7 @@ function ahorcado () {
 function teclado() {
     var teclas = document.getElementById('buttons');
     var letras = document.createElement('ul');
+
     for (var i = 0; i < abecedario.length; i++) {
         letras.id = 'abecedario';
         var listaLetras = document.createElement('li');
@@ -40,9 +46,24 @@ function teclado() {
         listaLetras.innerHTML = abecedario[i];
         teclas.appendChild(letras);
         letras.appendChild(listaLetras);
+        listaLetras.setAttribute('data-key', abecedario[i]);
         }
     }
-    teclado();    
+    // Crear letras jugador con ul
+    resultado = function () {
+        var letrasJugador = document.getElementById('hold');
+        var letrasCorrectas = document.createElement('ul');
+
+        for (var i = 0; i < palabra.length; i++) {
+            letrasCorrectas.setAttribute('id', 'my-word');
+
+        }
+    }
+
+
+
+    teclado();
+
 }
 ahorcado();
 

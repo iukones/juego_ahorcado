@@ -171,7 +171,7 @@ p {
   font-size: 1.5rem;
   padding: 1rem .5rem;
   transition: all .07s ease;
-  width: 4rem;  
+  width: 4rem;
   text-align: center;
   color: white;
   background: rgba(0,0,0,0.4);
@@ -183,10 +183,10 @@ p {
   box-shadow: 0 0 1rem #ffc600;
 }
 
-/* #abecedario li:hover {
-  background: #c1d72e;
-  border: solid 1px #fff;
-  color: #fff; */
+#abecedario li:hover {
+  transform: scale(1.1);
+  border-color: #ffc600;
+  box-shadow: 0 0 1rem #ffc600;
 }
 
 #my-word {
