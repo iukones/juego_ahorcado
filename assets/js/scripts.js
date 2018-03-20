@@ -13,7 +13,7 @@
 
 document.addEventListener('keydown', function (e) {
     // console.log(e.key);
-    var pressKey = document.querySelector('li[data-key = "' + e.key +'"]');
+    var pressKey = document.querySelector('li[data-key = "'+ e.key +'"]');
     // console.log('li[data-key = "' + e.key +'"]');
     // var pressKey = document.querySelector('li[data-key = "a"]');
     // var pressKey = document.querySelector('li[data-key = " " a]');
@@ -56,11 +56,11 @@ function teclado() {
 
         for (var i = 0; i < palabra.length; i++) {
             letrasCorrectas.setAttribute('id', 'my-word');
-
+            adivinaPalabra = document.createElement('li');
+            adivinaPalabra.setAttribute('class', 'guess');
+            if (adivinaPalabra[i])
         }
     }
-
-
 
     teclado();
 
