@@ -94,7 +94,7 @@ header, footer, nav, section, article, hgroup, figure {
 
 
 body {
-  /* background: #ffc600; */
+  background: #ffc600;
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   color: #fff;
   height: 100%;

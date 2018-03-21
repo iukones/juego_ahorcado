@@ -22,6 +22,7 @@ document.addEventListener('keydown', function (e) {
 
 function ahorcado () {
 
+    var categoria;
     var palabra;
     var adivinaPalabra;
     var guardarAdivinaPalabra = [ ];
@@ -33,6 +34,12 @@ function ahorcado () {
         'q', 'r', 's', 't', 'u', 'v', 'w', 'x',
         'y', 'z'
     ];
+
+    // Get elements
+  var showLives = document.getElementById("mylives");
+  var showCatagory = document.getElementById("scatagory");
+  var getHint = document.getElementById("hint");
+  var showClue = document.getElementById("clue");
 
     // crear teclado con abecedario
 function teclado() {
@@ -50,7 +57,7 @@ function teclado() {
         }
     }
     // Crear letras jugador con ul
-    resultado = function () {
+     function resultado () {
         var letrasJugador = document.getElementById('hold');
         var letrasCorrectas = document.createElement('ul');
 
@@ -58,11 +65,34 @@ function teclado() {
             letrasCorrectas.setAttribute('id', 'my-word');
             adivinaPalabra = document.createElement('li');
             adivinaPalabra.setAttribute('class', 'guess');
-            if (adivinaPalabra[i])
+            if (palabra[i] === "-") {
+                adivinaPalabra.innerHTML = "-";
+                espaciosPalabra = 1;
+            } else{
+                adivinaPalabra.innerHTML = "_";
+            }
+            guardarAdivinaPalabra.push(adivinaPalabra);
+            letrasJugador.appendChild(letrasCorrectas);
+            letrasCorrectas.appendChild(adivinaPalabra);
         }
+        
     }
 
+    // Show lives
+   comments = function () {
+    showLives.innerHTML = "You have " + lives + " lives";
+    if (lives < 1) {
+      showLives.innerHTML = "Game Over";
+    }
+    for (var i = 0; i < geusses.length; i++) {
+      if (counter + space === geusses.length) {
+        showLives.innerHTML = "You Win!";
+      }
+    }
+  }
+
     teclado();
+    
 
 }
 ahorcado();
