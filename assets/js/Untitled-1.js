@@ -1,3 +1,5 @@
+'use strict'
+
 //   ejemplo ahorcado
 function ahorcado() {
 

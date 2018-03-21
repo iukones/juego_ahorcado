@@ -1,3 +1,4 @@
+'use strict'
 // ejemplo activar y desactivar foco en botones
 
 // var botton = document.querySelector('button');
@@ -37,7 +38,7 @@ function ahorcado () {
 
     // Get elements
   var showLives = document.getElementById("mylives");
-  var showCatagory = document.getElementById("scatagory");
+//   var showCatagory = document.getElementById("scatagory");
   var getHint = document.getElementById("hint");
   var showClue = document.getElementById("clue");
 
@@ -75,7 +76,7 @@ function teclado() {
             letrasJugador.appendChild(letrasCorrectas);
             letrasCorrectas.appendChild(adivinaPalabra);
         }
-        
+
     }
 
     // Show lives
@@ -92,7 +93,7 @@ function teclado() {
   }
 
     teclado();
-    
+
 
 }
 ahorcado();
