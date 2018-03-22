@@ -30,11 +30,11 @@ function validar(e) {
             if(total.length==espacios) {
                 alert("Listo ha ganado pero ha tenido " + errores + " errores");
                 reset();
-                }
-                if(errores!=0) {
-                    errores = errores -1;
-                    }
-                }else{
+            }
+            if(errores!=0) {
+                errores = errores -1;
+            }
+        }else{
                     if (verificado == 1) {
                         errores++;
                         }
