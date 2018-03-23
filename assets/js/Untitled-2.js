@@ -4,17 +4,22 @@
         console.log(e);
         if (e.pressKey !== 'transform') return;
         e.target.classList.remove('push');
-
     }
+
+    const keys = Array.from(document.querySelectorAll('.push'));
+    keys.forEach(key => key.addEventListener('transitionend', removeTransition));
+    window.addEventListener('keydown', keys);
+
 
     document.addEventListener('keydown', function (e) {
         // console.log(e.key);
         var pressKey = document.querySelector('li[data-key = "'+ e.key +'"]');
-        // console.log('li[data-key = "' + e.key +'"]');    
-        pressKey.classList.add('push');
+        pressKey.classList.add('push', validar);
+        activo = e.key;
+        // console.log(activo)
     });
 
-
+    var activo;
     var letra;
     var espacios;
     var errores = 0;
@@ -23,10 +28,9 @@
     var palabras;
 
     var abecedario = [
-        'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h',
-        'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p',
-        'q', 'r', 's', 't', 'u', 'v', 'w', 'x',
-        'y', 'z'
+        'q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p',
+        'a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'ñ',
+        'z', 'x', 'c', 'v', 'b', 'n', 'm'
     ];
 
     var teclas = document.getElementById('buttons');
@@ -42,19 +46,20 @@
             teclas.appendChild(letras);
             letras.appendChild(listaLetras);
             listaLetras.setAttribute('data-key', abecedario[i]);
-            }
+        }
+
     }
 
     function mostrar(){
         var n;
-        n = Math.floor(Math.random() * 5);
+        n = Math.floor(Math.random() * palabras.length);
         espacios = palabras[n].length;
         palabra = palabras[n];
         document.write('La palabra tiene ' + espacios + ' letras <br />');
     }
 
     function validar(e) {
-        var t;    
+        var t;
         t = (document.all) ? e.keyCode : e.which;
         document.f1.letra.value = '';
         letra = String.fromCharCode(t);
@@ -69,7 +74,7 @@
                     alert("Listo ha ganado pero ha tenido " + errores + " errores");
                     reset();
                 }
-                if(errores!=0) {
+                if(errores != 0) {
                     errores = errores -1;
                 }
             }
