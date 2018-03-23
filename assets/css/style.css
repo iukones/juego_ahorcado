@@ -183,6 +183,13 @@ p {
   box-shadow: 0 0 1rem #ffc600;
 }
 
+.score {
+  background:rgba(255,255,255,0.2);
+  padding:0 3rem;
+  line-height:1;
+  border-radius:1rem;
+}
+
 #abecedario li:hover {
   /* transform: scale(1.1); */
   border-color: #ffc600;

@@ -27,12 +27,14 @@ function ahorcado() {
 
   // create alphabet ul
   var buttons = function () {
-    myButtons = document.getElementById('buttons');
-    letters = document.createElement('ul');
+    // var myButtons;
+    // var letters;
+    var myButtons = document.getElementById('buttons');
+    var letters = document.createElement('ul');
 
     for (var i = 0; i < alphabet.length; i++) {
       letters.id = 'alphabet';
-      list = document.createElement('li');
+      var list = document.createElement('li');
       list.id = 'letter';
       list.innerHTML = alphabet[i];
       check();
@@ -54,7 +56,7 @@ function ahorcado() {
   }
 
   // Create geusses ul
-   result = function () {
+   var result = function () {
     wordHolder = document.getElementById('hold');
     correct = document.createElement('ul');
 
@@ -76,7 +78,7 @@ function ahorcado() {
   }
 
   // Show lives
-   comments = function () {
+   var comments = function () {
     showLives.innerHTML = "You have " + lives + " lives";
     if (lives < 1) {
       showLives.innerHTML = "Game Over";
@@ -96,7 +98,7 @@ function ahorcado() {
 
 
    // Hangman
-  canvas =  function(){
+  var canvas =  function(){
 
     myStickman = document.getElementById("stickman");
     context = myStickman.getContext('2d');
@@ -105,7 +107,7 @@ function ahorcado() {
     context.lineWidth = 2;
   };
 
-    head = function(){
+    var head = function(){
       myStickman = document.getElementById("stickman");
       context = myStickman.getContext('2d');
       context.beginPath();
@@ -113,54 +115,54 @@ function ahorcado() {
       context.stroke();
     }
 
-  draw = function($pathFromx, $pathFromy, $pathTox, $pathToy) {
+  var draw = function($pathFromx, $pathFromy, $pathTox, $pathToy) {
 
     context.moveTo($pathFromx, $pathFromy);
     context.lineTo($pathTox, $pathToy);
     context.stroke();
 }
 
-   frame1 = function() {
+   var frame1 = function() {
      draw (0, 150, 150, 150);
    };
 
-   frame2 = function() {
+   var frame2 = function() {
      draw (10, 0, 10, 600);
    };
 
-   frame3 = function() {
+   var frame3 = function() {
      draw (0, 5, 70, 5);
    };
 
-   frame4 = function() {
+   var frame4 = function() {
      draw (60, 5, 60, 15);
    };
 
-   torso = function() {
+   var torso = function() {
      draw (60, 36, 60, 70);
    };
 
-   rightArm = function() {
+   var rightArm = function() {
      draw (60, 46, 100, 50);
    };
 
-   leftArm = function() {
+   var leftArm = function() {
      draw (60, 46, 20, 50);
    };
 
-   rightLeg = function() {
+   var rightLeg = function() {
      draw (60, 70, 100, 100);
    };
 
-   leftLeg = function() {
+   var leftLeg = function() {
      draw (60, 70, 20, 100);
    };
 
-  drawArray = [rightLeg, leftLeg, rightArm, leftArm,  torso,  head, frame4, frame3, frame2, frame1];
+  var drawArray = [rightLeg, leftLeg, rightArm, leftArm,  torso,  head, frame4, frame3, frame2, frame1];
 
 
   // OnClick Function
-   check = function () {
+   var check = function () {
     list.onclick = function () {
       var geuss = (this.innerHTML);
       this.setAttribute("class", "active");
@@ -184,7 +186,7 @@ function ahorcado() {
 
 
   // Play
-  play = function () {
+  var play = function () {
     categories = [
         ["everton", "liverpool", "swansea", "chelsea", "hull", "manchester-city", "newcastle-united"],
         ["alien", "dirty-harry", "gladiator", "finding-nemo", "jaws"],
