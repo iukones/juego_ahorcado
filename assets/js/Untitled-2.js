@@ -14,8 +14,9 @@
     document.addEventListener('keydown', function (e) {
         // console.log(e.key);
         var pressKey = document.querySelector('li[data-key = "'+ e.key +'"]');
-        pressKey.classList.add('push', validar);
+        pressKey.classList.add('push');
         activo = e.key;
+        validar();
         // console.log(activo)
     });
 
@@ -60,8 +61,7 @@
 
     function validar(e) {
         var t;
-        t = (document.all) ? e.keyCode : e.which;
-        document.f1.letra.value = '';
+        t = (document.all) ? e.keyCode : document.f1.letra.value = '';
         letra = String.fromCharCode(t);
         var verificado = 0;
 
