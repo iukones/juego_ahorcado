@@ -6,36 +6,33 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Juego Ahorcado</title>
     <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
 
 </head>
 <body>
 
-    <div class="wrapper">
+    <!-- <div class="wrapper">
         <h1>ahorcado</h1>
          <p>Usa el teclado de abajo para adivinar la palabra </p>
      </div>
 
      <div class="wrapper">
          <button id="reset">Jugar de nuevo</button>
-         
+
          <div id="buttons"></div>
 
-       <!-- <div id="hold"></div> -->
+       <div id="hold"></div>
 
-       <!-- <p id="mylives"></p> -->
+       <p id="mylives"></p>
 
-       <!-- <div class="container"> -->
+       <div class="container">
+       </div> -->
 
 
-         
-
-       </div>
-
-     
 
      <!-- <audio data-key="76" src="assets/sounds/tink.wav"></audio> -->
 
-     <span class="score"id="errores">Errores: 0</span><br />
+     <!-- <span class="score"id="errores">Errores: 0</span><br />
      <span width="30px" id="0">&nbsp;</span>
      <span width="30px" id="1">&nbsp;</span>
      <span width="30px" id="2">&nbsp;</span>
@@ -55,10 +52,27 @@
      <br />Introduzca una letra
      <form name="f1">
      <input id="texto" type="text" name="letra" onkeypress="validar(event)">
-     </form>
+     </form> -->
+
+     <section>
+         <h1>Hangman<br>Your favorite classroom pastime returns!</h1>
+
+         <p id="ratefeld"></p>
+
+         <form name="rateformular">
+             <input name="ratezeichen" type="text" size="5" maxlength="1">
+             <input name="ratebutton" type="button" value="Guess" onClick="pruefeZeichen()">
+             <p id="gerateneBuchstaben">Wrong Letters:</p>
+             <img src="http://www.writteninpencil.de/Projekte/Hangman/hangman0.png" id="hangman"><br />
+             <input name="refresh" type="button" value="New Game" onClick="location.reload()">
+         </form>
+     </section>
+
+
 
 <!-- <script src="assets/js/scripts.js"></script> -->
 <!-- <script src="assets/js/Untitled-1.js"></script> -->
-<script src="assets/js/Untitled-2.js"></script>
+<!-- <script src="assets/js/Untitled-2.js"></script> -->
+<script src="assets/js/Untitled-3.js"></script>
 </body>
 </html>

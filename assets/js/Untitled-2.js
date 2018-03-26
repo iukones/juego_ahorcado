@@ -16,7 +16,7 @@
         var pressKey = document.querySelector('li[data-key = "'+ e.key +'"]');
         pressKey.classList.add('push');
         activo = e.key;
-        validar();
+        // validar(e);
         // console.log(activo)
     });
 
@@ -48,7 +48,7 @@
             letras.appendChild(listaLetras);
             listaLetras.setAttribute('data-key', abecedario[i]);
         }
-
+        validar();
     }
 
     function mostrar(){

@@ -94,11 +94,11 @@ header, footer, nav, section, article, hgroup, figure {
 
 
 body {
-  background: url(../img/back-bosque.jpg) bottom center no-repeat;
+  background: url(../img/back-bosque.jpg) no-repeat;
   background-size: cover;
   /* background: #ffc600; */
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-  color: #333;
+  font-family: "Permanent Marker", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  color: #ffc600;
   height: 100%;
   text-align: center;
   font-size: 18px;
@@ -121,9 +121,9 @@ canvas {
 }
 
 h1, h2, h3 {
-  font-family: 'Roboto', sans-serif;
+  /* font-family: 'Roboto', sans-serif; */
   font-weight: 100;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
   margin: 5px 0;
 }
 
