@@ -1,27 +1,27 @@
 	'use strict'
 
 
-	var lsgwoerter = [
-	["T","R","E","E","H","O","U","S","E"],
-	["J","A","V","A","S","C","R","I","P","T"],
-	["W","E","B","D","E","S","I","G","N"],
-	["E","D","U","C","A","T","I","O","N"],
+	var guessWord = [
+	["C","O","R","T","E","Z","A"],
+	["R","A","M","A","S"],
+	["A","R","B","U","S","T","O","S"],
+	["N","U","E","C","E","S"],
 	["C","H","O","C","O","L","A","T","E"],
-	["G","E","R","M","A","N","Y"]
+	["B","E","L","L","O","T","A","S"]
 	];
 
-	var random = Math.floor((Math.random()*(lsgwoerter.length -1)));
+	var random = Math.floor((Math.random() * (guessWord.length -1)));
 
-	var lsgwort = lsgwoerter[random]; // the word to guess will be chosen from the array above
-	var ratewort = new Array(lsgwort.length);
+	var words = guessWord[random]; // la palabra para adivinar se elegirá de la matriz anterior
+	var ratewort = new Array(words.length);
 	var fehler = 0;
 
-	// every letter in the word is symbolized by an underscore in the guessfield
+	// cada letra de la palabra está simbolizada por un guión bajo en el campo de la suposición
 	for (var i = 0; i < ratewort.length; i++){
 		ratewort[i] = "_ ";
 	}
 
-	// prints the guessfield
+	// imprime el campo de adivinar
 	function printRatewort(){
 		for (var i = 0; i < ratewort.length; i++){
 		var ratefeld = document.getElementById("ratefeld");
@@ -30,26 +30,26 @@
 		}
 	}
 
-	//checks if the the letter provided by the user matches one or more of the letters in the word
+	// comprueba si la letra proporcionada por el usuario coincide con una o más de las letras de la palabra
 	var pruefeZeichen = function(){
 		var f = document.rateformular;
 		var b = f.elements["ratezeichen"];
-		var zeichen = b.value; // the letter provided by the user
+		var zeichen = b.value; // la letra proporcionada por el usuario
 		zeichen = zeichen.toUpperCase();
-		for (var i = 0; i < lsgwort.length; i++){
-			if(lsgwort[i] === zeichen){
+		for (var i = 0; i < words.length; i++){
+			if(words[i] === zeichen){
 				ratewort[i] = zeichen + " ";
 				var treffer = true;
 			}
 		b.value = "";
 		}
 
-		//deletes the guessfield and replaces it with the new one
+		// elimina el campo de adivinanza y lo reemplaza con el nuevo
 		var ratefeld = document.getElementById("ratefeld");
 		ratefeld.innerHTML="";
 		printRatewort();
 
-		// if a guessed letter is not in the word, the letter will be put on the "wrong letters"-list and hangman grows
+		// si una letra adivinada no está en la palabra, la carta se colocará en la lista de "letras incorrectas" y el verdugo crecerá
 		if(!treffer){
 			var gerateneBuchstaben = document.getElementById("gerateneBuchstaben");
 			var buchstabe = document.createTextNode(" " + zeichen);
@@ -59,7 +59,7 @@
 		hangman.src = "http://www.writteninpencil.de/Projekte/Hangman/hangman" + fehler + ".png";
 		}
 
-		//checks if all letters have been found
+		// comprueba si se han encontrado todas las letras
 		var fertig = true;
 		for (var i = 0; i < ratewort.length; i++){
 			if(ratewort[i] === "_ "){
@@ -67,12 +67,12 @@
 			}
 		}
 		if(fertig){
-			window.alert("You win!");
+			window.alert("has ganado");
 		}
 
-		//once you got six wrong letters, you lose
+		// una vez que tienes seis letras equivocadas, pierdes
 		if(fehler === 6){
-			window.alert("Uh...I guess you're dead now.");
+			window.alert("Ups... ahora estas muerto");
 		}
 	}
 

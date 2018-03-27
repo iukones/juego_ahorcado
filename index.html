@@ -32,7 +32,7 @@
 
      <!-- <audio data-key="76" src="assets/sounds/tink.wav"></audio> -->
 
-     <!-- <span class="score"id="errores">Errores: 0</span><br />
+     <!-- <span class="score" id="errores">Errores: 0</span><br />
      <span width="30px" id="0">&nbsp;</span>
      <span width="30px" id="1">&nbsp;</span>
      <span width="30px" id="2">&nbsp;</span>
@@ -55,17 +55,24 @@
      </form> -->
 
      <section>
-         <h1>Hangman<br>Your favorite classroom pastime returns!</h1>
+         <h1>adivina la comida que necesitan los castores!</h1>
 
-         <p id="ratefeld"></p>
+         <div>
+             <p class="score" id="ratefeld"></p>
+         </div>
+
+        
 
          <form name="rateformular">
              <input name="ratezeichen" type="text" size="5" maxlength="1">
-             <input name="ratebutton" type="button" value="Guess" onClick="pruefeZeichen()">
-             <p id="gerateneBuchstaben">Wrong Letters:</p>
-             <img src="http://www.writteninpencil.de/Projekte/Hangman/hangman0.png" id="hangman"><br />
-             <input name="refresh" type="button" value="New Game" onClick="location.reload()">
+             <input name="ratebutton" type="button" value="Adivinar" onClick="pruefeZeichen()">
+             <p class="score" id="gerateneBuchstaben">Letra equivocada:</p>
+             <br />
+             <input name="refresh" type="button" value="jugar de nuevo" onClick="location.reload()">
          </form>
+         <!-- <img src="http://www.writteninpencil.de/Projekte/Hangman/hangman0.png" id="hangman"> -->
+
+
      </section>
 
 
