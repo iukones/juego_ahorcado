@@ -1,0 +1,22 @@
+{
+  "name": "juego_ahorcado",
+  "version": "1.0.0",
+  "description": "ejercicio juego ahorcado",
+  "main": "(index.html)",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iukones/juego_ahorcado.git"
+  },
+  "author": "iukones",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/iukones/juego_ahorcado/issues"
+  },
+  "homepage": "https://github.com/iukones/juego_ahorcado#readme",
+  "devDependencies": {
+    "live-server": "^1.2.0"
+  }
+}
