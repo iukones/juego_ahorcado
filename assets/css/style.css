@@ -94,11 +94,11 @@ header, footer, nav, section, article, hgroup, figure {
 
 
 body {
-  background: url(../img/back-bosque.jpg) no-repeat;
+  /* background: url(../img/back-bosque.jpg) no-repeat; */
   background-size: cover;
   /* background: #ffc600; */
   font-family: "Permanent Marker", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-  color: #ffc600;
+  color: #333;
   height: 100%;
   text-align: center;
   font-size: 18px;
@@ -139,18 +139,18 @@ p {
   font-size: 1.6em;
 }
 
-#abecedario {
+#alphabet {
   margin: 15px auto;
   padding: 0;
   max-width: 900px;
 }
-#abecedario:after {
+#alphabet:after {
   content: "";
   display: table;
   clear: both;
 }
 
-#abecedario li {
+#alphabet li {
   /* float: left;
   margin: 0 10px 10px 0;
   list-style: none;
@@ -192,7 +192,7 @@ p {
   border-radius:1rem;
 }
 
-#abecedario li:hover {
+#alphabet li:hover {
   /* transform: scale(1.1); */
   border-color: #ffc600;
   box-shadow: 0 0 1rem #ffc600;

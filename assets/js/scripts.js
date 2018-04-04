@@ -80,7 +80,7 @@ function teclado() {
     }
 
     // Show lives
-   comments = function () {
+   var comments = function () {
     showLives.innerHTML = "You have " + lives + " lives";
     if (lives < 1) {
       showLives.innerHTML = "Game Over";

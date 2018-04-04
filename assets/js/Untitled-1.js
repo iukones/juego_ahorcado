@@ -1,6 +1,3 @@
-'use strict'
-
-//   ejemplo ahorcado
 window.onload = function () {
 
   var alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h',
@@ -9,12 +6,12 @@ window.onload = function () {
 
   var categories;         // Array of topics
   var chosenCategory;     // Selected catagory
-  var getHint;          // Word getHint
-  var word;              // Selected word
-  var guess;             // Geuss
+  var getHint ;          // Word getHint
+  var word ;              // Selected word
+  var guess ;             // Geuss
   var geusses = [ ];      // Stored geusses
-  var lives;             // Lives
-  var counter;           // Count correct geusses
+  var lives ;             // Lives
+  var counter ;           // Count correct geusses
   var space;              // Number of spaces in word '-'
 
   // Get elements
@@ -43,15 +40,15 @@ window.onload = function () {
 
 
   // Select Catagory
-  var selectCat = function () {
-    if (chosenCategory === categories[0]) {
-      catagoryName.innerHTML = "The Chosen Category Is Premier League Football Teams";
-    } else if (chosenCategory === categories[1]) {
-      catagoryName.innerHTML = "The Chosen Category Is Films";
-    } else if (chosenCategory === categories[2]) {
-      catagoryName.innerHTML = "The Chosen Category Is Cities";
-    }
-  }
+  // var selectCat = function () {
+  //   if (chosenCategory === categories[0]) {
+  //     catagoryName.innerHTML = "The Chosen Category Is Premier League Football Teams";
+  //   } else if (chosenCategory === categories[1]) {
+  //     catagoryName.innerHTML = "The Chosen Category Is Films";
+  //   } else if (chosenCategory === categories[2]) {
+  //     catagoryName.innerHTML = "The Chosen Category Is Cities";
+  //   }
+  // }
 
   // Create geusses ul
    result = function () {
@@ -77,86 +74,86 @@ window.onload = function () {
 
   // Show lives
    comments = function () {
-    showLives.innerHTML = "You have " + lives + " lives";
+    showLives.innerHTML = "Tienes " + lives + " oportunidades";
     if (lives < 1) {
       showLives.innerHTML = "Game Over";
     }
     for (var i = 0; i < geusses.length; i++) {
       if (counter + space === geusses.length) {
-        showLives.innerHTML = "You Win!";
+        showLives.innerHTML = "Haz ganado!";
       }
     }
   }
 
       // Animate man
-  var animate = function () {
-    var drawMe = lives ;
-    drawArray[drawMe]();
-  }
+  // var animate = function () {
+  //   var drawMe = lives ;
+  //   drawArray[drawMe]();
+  // }
 
 
    // Hangman
-  canvas =  function(){
+//   canvas =  function(){
 
-    myStickman = document.getElementById("stickman");
-    context = myStickman.getContext('2d');
-    context.beginPath();
-    context.strokeStyle = "#fff";
-    context.lineWidth = 2;
-  };
+//     myStickman = document.getElementById("stickman");
+//     context = myStickman.getContext('2d');
+//     context.beginPath();
+//     context.strokeStyle = "#fff";
+//     context.lineWidth = 2;
+//   };
 
-    head = function(){
-      myStickman = document.getElementById("stickman");
-      context = myStickman.getContext('2d');
-      context.beginPath();
-      context.arc(60, 25, 10, 0, Math.PI*2, true);
-      context.stroke();
-    }
+//     head = function(){
+//       myStickman = document.getElementById("stickman");
+//       context = myStickman.getContext('2d');
+//       context.beginPath();
+//       context.arc(60, 25, 10, 0, Math.PI*2, true);
+//       context.stroke();
+//     }
 
-  draw = function($pathFromx, $pathFromy, $pathTox, $pathToy) {
+//   draw = function($pathFromx, $pathFromy, $pathTox, $pathToy) {
 
-    context.moveTo($pathFromx, $pathFromy);
-    context.lineTo($pathTox, $pathToy);
-    context.stroke();
-}
+//     context.moveTo($pathFromx, $pathFromy);
+//     context.lineTo($pathTox, $pathToy);
+//     context.stroke();
+// }
 
-   frame1 = function() {
-     draw (0, 150, 150, 150);
-   };
+//    frame1 = function() {
+//      draw (0, 150, 150, 150);
+//    };
 
-   frame2 = function() {
-     draw (10, 0, 10, 600);
-   };
+//    frame2 = function() {
+//      draw (10, 0, 10, 600);
+//    };
 
-   frame3 = function() {
-     draw (0, 5, 70, 5);
-   };
+//    frame3 = function() {
+//      draw (0, 5, 70, 5);
+//    };
 
-   frame4 = function() {
-     draw (60, 5, 60, 15);
-   };
+//    frame4 = function() {
+//      draw (60, 5, 60, 15);
+//    };
 
-   torso = function() {
-     draw (60, 36, 60, 70);
-   };
+//    torso = function() {
+//      draw (60, 36, 60, 70);
+//    };
 
-   rightArm = function() {
-     draw (60, 46, 100, 50);
-   };
+//    rightArm = function() {
+//      draw (60, 46, 100, 50);
+//    };
 
-   leftArm = function() {
-     draw (60, 46, 20, 50);
-   };
+//    leftArm = function() {
+//      draw (60, 46, 20, 50);
+//    };
 
-   rightLeg = function() {
-     draw (60, 70, 100, 100);
-   };
+//    rightLeg = function() {
+//      draw (60, 70, 100, 100);
+//    };
 
-   leftLeg = function() {
-     draw (60, 70, 20, 100);
-   };
+//    leftLeg = function() {
+//      draw (60, 70, 20, 100);
+//    };
 
-  drawArray = [rightLeg, leftLeg, rightArm, leftArm,  torso,  head, frame4, frame3, frame2, frame1];
+//   drawArray = [rightLeg, leftLeg, rightArm, leftArm,  torso,  head, frame4, frame3, frame2, frame1];
 
 
   // OnClick Function
@@ -175,7 +172,7 @@ window.onload = function () {
       if (j === -1) {
         lives -= 1;
         comments();
-        animate();
+        // animate();
       } else {
         comments();
       }
@@ -203,17 +200,17 @@ window.onload = function () {
     space = 0;
     result();
     comments();
-    selectCat();
-    canvas();
+    // selectCat();
+    // canvas();
   }
 
   play();
 
   // Hint
 
-    hint.onclick = function() {
+    function hint() {
 
-      hints = [
+      hints.onclick = [
         ["Based in Mersyside", "Based in Mersyside", "First Welsh team to reach the Premier Leauge", "Owned by A russian Billionaire", "Once managed by Phil Brown", "2013 FA Cup runners up", "Gazza's first club"],
         ["Science-Fiction horror film", "1971 American action film", "Historical drama", "Anamated Fish", "Giant great white shark"],
         ["Northern city in the UK", "Home of AC and Inter", "Spanish capital", "Netherlands capital", "Czech Republic capital"]
@@ -234,3 +231,5 @@ window.onload = function () {
     play();
   }
 }
+
+
