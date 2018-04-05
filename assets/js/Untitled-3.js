@@ -1,83 +1,47 @@
-	'use strict'
+	'use strict';
+	var word = ['H','O','L','A','O'];
 
-
-	var guessWord = [
-	["C","O","R","T","E","Z","A"],
-	["R","A","M","A","S"],
-	["A","R","B","U","S","T","O","S"],
-	["N","U","E","C","E","S"],
-	["C","H","O","C","O","L","A","T","E"],
-	["B","E","L","L","O","T","A","S"]
-	];
-
-	var random = Math.floor((Math.random() * (guessWord.length -1)));
-
-	var words = guessWord[random]; // la palabra para adivinar se elegirá de la matriz anterior
-	var ratewort = new Array(words.length);
-	var fehler = 0;
-
-	// cada letra de la palabra está simbolizada por un guión bajo en el campo de la suposición
-	for (var i = 0; i < ratewort.length; i++){
-		ratewort[i] = "_ ";
+	// Maneja el teclado de botones (En pantalla)
+	function compareLetter(letter) {
+	var selectedLetter = letter.value;
+	playLetter(selectedLetter);
 	}
+	// Escuchar para que se pueda utilizar el teclado
+	document.addEventListener('keydown', function getKeyLetter(event) {
+	var keyLetter = event.key;
+	var selectedLetter = keyLetter.toUpperCase();
+	playLetter(selectedLetter);
+	});
 
-	// imprime el campo de adivinar
-	function printRatewort(){
-		for (var i = 0; i < ratewort.length; i++){
-		var ratefeld = document.getElementById("ratefeld");
-		var buchstabe = document.createTextNode(ratewort[i]);
-		ratefeld.appendChild(buchstabe);
+	// Toma la letra seleccionada y la compara con las letras de la palabra para decidir si fue una jugada correcta o un error
+	function playLetter(selectedLetter) {
+	var isMistake = true;
+	for (var i = 0; i < word.length; i++) {
+		if (selectedLetter == word[i]) {
+		alert('le atinaste a la letra ' + i);
+		isMistake = false;
+		showLetter(i, selectedLetter);
 		}
 	}
-
-	// comprueba si la letra proporcionada por el usuario coincide con una o más de las letras de la palabra
-	var pruefeZeichen = function(){
-		var f = document.rateformular;
-		var b = f.elements["ratezeichen"];
-		var zeichen = b.value; // la letra proporcionada por el usuario
-		zeichen = zeichen.toUpperCase();
-		for (var i = 0; i < words.length; i++){
-			if(words[i] === zeichen){
-				ratewort[i] = zeichen + " ";
-				var treffer = true;
-			}
-		b.value = "";
-		}
-
-		// elimina el campo de adivinanza y lo reemplaza con el nuevo
-		var ratefeld = document.getElementById("ratefeld");
-		ratefeld.innerHTML="";
-		printRatewort();
-
-		// si una letra adivinada no está en la palabra, la carta se colocará en la lista de "letras incorrectas" y el verdugo crecerá
-		if(!treffer){
-			var gerateneBuchstaben = document.getElementById("gerateneBuchstaben");
-			var buchstabe = document.createTextNode(" " + zeichen);
-			gerateneBuchstaben.appendChild(buchstabe);
-			fehler++;
-			var hangman = document.getElementById("hangman");
-		hangman.src = "http://www.writteninpencil.de/Projekte/Hangman/hangman" + fehler + ".png";
-		}
-
-		// comprueba si se han encontrado todas las letras
-		var fertig = true;
-		for (var i = 0; i < ratewort.length; i++){
-			if(ratewort[i] === "_ "){
-				fertig = false;
-			}
-		}
-		if(fertig){
-			window.alert("has ganado");
-		}
-
-		// una vez que tienes seis letras equivocadas, pierdes
-		if(fehler === 6){
-			window.alert("Ups... ahora estas muerto");
-		}
+	if (isMistake == true) {
+		alert('Ahora si estas mal')
+	}
 	}
 
-	function init(){
-		printRatewort();
+	// Inicia el juego y pinta la palabra para que el jugador sepa de cuantas letras es
+	function startGame() {
+	var showWord = document.querySelector('.show-word');
+	for(var i = 0; i < word.length; i++){
+		var space = document.createElement('span');
+		space.classList.add('letter-box');
+		var hiddenLetter = document.createTextNode('_');
+		space.appendChild(hiddenLetter);
+		showWord.appendChild(space);
+	}
 	}
 
-	window.onload = init;
+	// Pinta la letra correcta en la pocisión correspondiente cuando hay un acierto
+	function showLetter(position, selectedLetter) {
+	var letterBox = document.getElementsByClassName('letter-box');
+	letterBox[position].innerHTML = selectedLetter
+	}

@@ -94,7 +94,7 @@ header, footer, nav, section, article, hgroup, figure {
 
 
 body {
-  /* background: url(../img/back-bosque.jpg) no-repeat; */
+  background: url(../img/back-bosque.jpg) no-repeat;
   background-size: cover;
   /* background: #ffc600; */
   font-family: "Permanent Marker", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
@@ -186,10 +186,10 @@ p {
 }
 
 .score {
-  background:rgba(255,255,255,0.2);
+  background:rgba(255, 198, 0, 0.5);
   padding:0 3rem;
   line-height:1;
-  border-radius:1rem;
+  /* border-radius:1rem; */
 }
 
 #alphabet li:hover {

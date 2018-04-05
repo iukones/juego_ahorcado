@@ -6,12 +6,12 @@ window.onload = function () {
 
   var categories;         // Array of topics
   var chosenCategory;     // Selected catagory
-  var getHint ;          // Word getHint
-  var word ;              // Selected word
-  var guess ;             // Geuss
+  var getHint;          // Word getHint
+  var word;              // Selected word
+  var guess;             // Geuss
   var geusses = [ ];      // Stored geusses
   var lives ;             // Lives
-  var counter ;           // Count correct geusses
+  var counter;           // Count correct geusses
   var space;              // Number of spaces in word '-'
 
   // Get elements
@@ -58,7 +58,7 @@ window.onload = function () {
     for (var i = 0; i < word.length; i++) {
       correct.setAttribute('id', 'my-word');
       guess = document.createElement('li');
-      guess.setAttribute('class', 'guess');
+      guess.setAttribute('class', 'guess score');
       if (word[i] === "-") {
         guess.innerHTML = "-";
         space = 1;
@@ -222,7 +222,6 @@ window.onload = function () {
   };
 
    // Reset
-
   document.getElementById('reset').onclick = function() {
     correct.parentNode.removeChild(correct);
     letters.parentNode.removeChild(letters);
