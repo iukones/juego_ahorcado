@@ -165,6 +165,7 @@ p {
   border-radius: 5px;
   -khtml-border-radius: 5px;
   border: solid 1px #fff; */
+  cursor: pointer;
   float: left;
   border: .4rem solid black;
   border-radius: .5rem;
@@ -215,23 +216,23 @@ p {
 }
 
 .active {
+  opacity: 0;
+  filter: alpha(opacity=40);
+  -moz-transition: all 1s ease-in;
+  -moz-transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  cursor: none !important;
+}
+/* .active:hover {
+  -moz-transition: all 1s ease-in;
+  -moz-transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
   opacity: 0.4;
   filter: alpha(opacity=40);
   -moz-transition: all 1s ease-in;
   -moz-transition: all 0.3s ease-in-out;
   -webkit-transition: all 0.3s ease-in-out;
-  cursor: default;
-}
-.active:hover {
-  -moz-transition: all 1s ease-in;
-  -moz-transition: all 0.3s ease-in-out;
-  -webkit-transition: all 0.3s ease-in-out;
-  opacity: 0.4;
-  filter: alpha(opacity=40);
-  -moz-transition: all 1s ease-in;
-  -moz-transition: all 0.3s ease-in-out;
-  -webkit-transition: all 0.3s ease-in-out;
-}
+} */
 
 #mylives {
   font-size: 1.6em;
