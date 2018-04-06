@@ -10,11 +10,11 @@ window.onload = function () {
   var word;              // Selected word
   var guess;             // Geuss
   var geusses = [ ];      // Stored geusses
-  var lives ;             // Lives
+  var lives;             // Lives
   var counter;           // Count correct geusses
   var space;              // Number of spaces in word '-'
 
-  // Get elements
+  // pintamos elementos html
   var showLives = document.getElementById("mylives");
   var showCatagory = document.getElementById("scatagory");
   var getHint = document.getElementById("hint");
@@ -22,7 +22,7 @@ window.onload = function () {
 
 
 
-  // create alphabet ul
+  // creamos dinamicamente los botones del telcado ul
   var buttons = function () {
     myButtons = document.getElementById('buttons');
     letters = document.createElement('ul');
@@ -38,19 +38,7 @@ window.onload = function () {
     }
   }
 
-
-  // Select Catagory
-  // var selectCat = function () {
-  //   if (chosenCategory === categories[0]) {
-  //     catagoryName.innerHTML = "The Chosen Category Is Premier League Football Teams";
-  //   } else if (chosenCategory === categories[1]) {
-  //     catagoryName.innerHTML = "The Chosen Category Is Films";
-  //   } else if (chosenCategory === categories[2]) {
-  //     catagoryName.innerHTML = "The Chosen Category Is Cities";
-  //   }
-  // }
-
-  // Create geusses ul
+  // creamos adivinanzas en los ul
    result = function () {
     wordHolder = document.getElementById('hold');
     correct = document.createElement('ul');
@@ -65,14 +53,13 @@ window.onload = function () {
       } else {
         guess.innerHTML = "_";
       }
-
       geusses.push(guess);
       wordHolder.appendChild(correct);
       correct.appendChild(guess);
     }
   }
 
-  // Show lives
+  // pintamos el numero de vidas u oportunidades lives
    comments = function () {
     showLives.innerHTML = "Tienes " + lives + " oportunidades";
     if (lives < 1) {
@@ -84,76 +71,6 @@ window.onload = function () {
       }
     }
   }
-
-      // Animate man
-  // var animate = function () {
-  //   var drawMe = lives ;
-  //   drawArray[drawMe]();
-  // }
-
-
-   // Hangman
-//   canvas =  function(){
-
-//     myStickman = document.getElementById("stickman");
-//     context = myStickman.getContext('2d');
-//     context.beginPath();
-//     context.strokeStyle = "#fff";
-//     context.lineWidth = 2;
-//   };
-
-//     head = function(){
-//       myStickman = document.getElementById("stickman");
-//       context = myStickman.getContext('2d');
-//       context.beginPath();
-//       context.arc(60, 25, 10, 0, Math.PI*2, true);
-//       context.stroke();
-//     }
-
-//   draw = function($pathFromx, $pathFromy, $pathTox, $pathToy) {
-
-//     context.moveTo($pathFromx, $pathFromy);
-//     context.lineTo($pathTox, $pathToy);
-//     context.stroke();
-// }
-
-//    frame1 = function() {
-//      draw (0, 150, 150, 150);
-//    };
-
-//    frame2 = function() {
-//      draw (10, 0, 10, 600);
-//    };
-
-//    frame3 = function() {
-//      draw (0, 5, 70, 5);
-//    };
-
-//    frame4 = function() {
-//      draw (60, 5, 60, 15);
-//    };
-
-//    torso = function() {
-//      draw (60, 36, 60, 70);
-//    };
-
-//    rightArm = function() {
-//      draw (60, 46, 100, 50);
-//    };
-
-//    leftArm = function() {
-//      draw (60, 46, 20, 50);
-//    };
-
-//    rightLeg = function() {
-//      draw (60, 70, 100, 100);
-//    };
-
-//    leftLeg = function() {
-//      draw (60, 70, 20, 100);
-//    };
-
-//   drawArray = [rightLeg, leftLeg, rightArm, leftArm,  torso,  head, frame4, frame3, frame2, frame1];
 
 
   // OnClick Function
@@ -183,9 +100,7 @@ window.onload = function () {
   // Play
   play = function () {
     categories = [
-        ["everton", "liverpool", "swansea", "chelsea", "hull", "manchester-city", "newcastle-united"],
-        ["alien", "dirty-harry", "gladiator", "finding-nemo", "jaws"],
-        ["manchester", "milan", "madrid", "amsterdam", "prague"]
+        ["cortezas", "ramas", "nueces-indias", "troncos", "arboles", "hojas", "ramitas"]
     ];
 
     chosenCategory = categories[Math.floor(Math.random() * categories.length)];
@@ -194,7 +109,7 @@ window.onload = function () {
     console.log(word);
     buttons();
 
-    geusses = [ ];
+    // geusses = [ ];
     lives = 10;
     counter = 0;
     space = 0;
@@ -203,31 +118,28 @@ window.onload = function () {
     // selectCat();
     // canvas();
   }
-
   play();
 
-  // Hint
+  // Pista
 
-    function hint() {
+   hint.onclick = function () {
 
-      hints.onclick = [
-        ["Based in Mersyside", "Based in Mersyside", "First Welsh team to reach the Premier Leauge", "Owned by A russian Billionaire", "Once managed by Phil Brown", "2013 FA Cup runners up", "Gazza's first club"],
-        ["Science-Fiction horror film", "1971 American action film", "Historical drama", "Anamated Fish", "Giant great white shark"],
-        ["Northern city in the UK", "Home of AC and Inter", "Spanish capital", "Netherlands capital", "Czech Republic capital"]
+      hints = [
+        ["Recubrimiento", "pequenas extensiones", "semillas muy ricas", "base gruesa que nace de la tierra", "lo que mas cortan de un bosque", "caen al piso en otoño", "pequeñas extensiones secas"]
     ];
 
     var catagoryIndex = categories.indexOf(chosenCategory);
     var hintIndex = chosenCategory.indexOf(word);
-    showClue.innerHTML = "Clue: - " +  hints [catagoryIndex][hintIndex];
+    showClue.innerHTML = "Pista: - " +  hints [catagoryIndex][hintIndex];
   };
 
+
    // Reset
-  document.getElementById('reset').onclick = function() {
-    correct.parentNode.removeChild(correct);
-    letters.parentNode.removeChild(letters);
-    showClue.innerHTML = "";
-    context.clearRect(0, 0, 400, 400);
-    play();
+    document.getElementById('reset').onclick = function() {
+      correct.parentNode.removeChild(correct);
+      letters.parentNode.removeChild(letters);
+      showClue.innerHTML = "";
+      play();
   }
 }
 
