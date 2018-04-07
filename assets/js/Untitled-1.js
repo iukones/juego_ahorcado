@@ -121,11 +121,10 @@ window.onload = function () {
   play();
 
   // Pista
-
    hint.onclick = function () {
 
       hints = [
-        ["Recubrimiento", "pequenas extensiones", "semillas muy ricas", "base gruesa que nace de la tierra", "lo que mas cortan de un bosque", "caen al piso en otoño", "pequeñas extensiones secas"]
+        ["Recubrimiento", "pequeñas extensiones", "semillas muy ricas", "base gruesa que nace de la tierra", "lo que mas cortan de un bosque", "caen al piso en otoño", "pequeñas extensiones secas"]
     ];
 
     var catagoryIndex = categories.indexOf(chosenCategory);
