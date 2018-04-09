@@ -1,34 +1,38 @@
+
+var alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h',
+      'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's',
+      't', 'u', 'v', 'w', 'x', 'y', 'z'];
+
+var categories;         // Matriz de temas
+var chosenCategory;     // Categoría seleccionada
+var getHint;          // Palabra obtener pista
+var word;              // Palabra seleccionada
+var guess;             // adivinar
+var guesses = [];      // Conjeturas almacenadas
+var lives;             // Vidas
+var counter;           // Contar aciertos
+var space;              // Número de espacios en la palabra '-'
+
+// pintamos elementos html
+var showLives = document.getElementById("mylives");
+console.log(showLives);
+var getHint = document.getElementById("hint");
+console.log(getHint);
+var showClue = document.getElementById("clue");
+console.log(showClue);
+
 window.onload = function () {
-
-  var alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h',
-        'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's',
-        't', 'u', 'v', 'w', 'x', 'y', 'z'];
-
-  var categories;         // Array of topics
-  var chosenCategory;     // Selected catagory
-  var getHint;          // Word getHint
-  var word;              // Selected word
-  var guess;             // Geuss
-  var geusses = [ ];      // Stored geusses
-  var lives;             // Lives
-  var counter;           // Count correct geusses
-  var space;              // Number of spaces in word '-'
-
-  // pintamos elementos html
-  var showLives = document.getElementById("mylives");
-  var showCatagory = document.getElementById("scatagory");
-  var getHint = document.getElementById("hint");
-  var showClue = document.getElementById("clue");
-
-
 
   // creamos dinamicamente los botones del telcado ul
   var buttons = function () {
     myButtons = document.getElementById('buttons');
+    console.log(myButtons);
     letters = document.createElement('ul');
+    console.log(letters);
 
     for (var i = 0; i < alphabet.length; i++) {
       letters.id = 'alphabet';
+      console.log(letters.id);
       list = document.createElement('li');
       list.id = 'letter';
       list.innerHTML = alphabet[i];
@@ -53,7 +57,7 @@ window.onload = function () {
       } else {
         guess.innerHTML = "_";
       }
-      geusses.push(guess);
+      guesses.push(guess);
       wordHolder.appendChild(correct);
       correct.appendChild(guess);
     }
@@ -65,8 +69,8 @@ window.onload = function () {
     if (lives < 1) {
       showLives.innerHTML = "Game Over";
     }
-    for (var i = 0; i < geusses.length; i++) {
-      if (counter + space === geusses.length) {
+    for (var i = 0; i < guesses.length; i++) {
+      if (counter + space === guesses.length) {
         showLives.innerHTML = "Haz ganado!";
       }
     }
@@ -81,7 +85,7 @@ window.onload = function () {
       this.onclick = null;
       for (var i = 0; i < word.length; i++) {
         if (word[i] === geuss) {
-          geusses[i].innerHTML = geuss;
+          guesses[i].innerHTML = geuss;
           counter += 1;
         }
       }
@@ -109,7 +113,7 @@ window.onload = function () {
     console.log(word);
     buttons();
 
-    // geusses = [ ];
+    guesses = [ ];
     lives = 10;
     counter = 0;
     space = 0;
