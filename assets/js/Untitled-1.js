@@ -1,7 +1,8 @@
 
-var alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h',
-      'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's',
-      't', 'u', 'v', 'w', 'x', 'y', 'z'];
+let alphabet = [];
+for (let index = 97; index <= 122; index++) {
+  alphabet.push(String.fromCharCode(index));
+}
 
 var categories;         // Matriz de temas
 var chosenCategory;     // Categoría seleccionada
@@ -15,24 +16,24 @@ var space;              // Número de espacios en la palabra '-'
 
 // pintamos elementos html
 var showLives = document.getElementById("mylives");
-console.log(showLives);
+// console.log(showLives);
 var getHint = document.getElementById("hint");
-console.log(getHint);
+// console.log(getHint);
 var showClue = document.getElementById("clue");
-console.log(showClue);
+// console.log(showClue);
 
 window.onload = function () {
 
   // creamos dinamicamente los botones del telcado ul
   var buttons = function () {
     myButtons = document.getElementById('buttons');
-    console.log(myButtons);
+    // console.log(myButtons);
     letters = document.createElement('ul');
-    console.log(letters);
+    // console.log(letters);
 
     for (var i = 0; i < alphabet.length; i++) {
       letters.id = 'alphabet';
-      console.log(letters.id);
+      // console.log(letters.id);
       list = document.createElement('li');
       list.id = 'letter';
       list.innerHTML = alphabet[i];
@@ -93,7 +94,7 @@ window.onload = function () {
       if (j === -1) {
         lives -= 1;
         comments();
-        // animate();
+        // castores();
       } else {
         comments();
       }
